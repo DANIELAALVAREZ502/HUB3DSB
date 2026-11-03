@@ -4,45 +4,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HUB 3DS-B</title>
+    <title>HUB 3DS-B | Learning Space</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header>
-        <h1>HUB 3DS-B</h1>
-        <p>Portal educativo</p>
+    <header class="navbar">
+        <a href="#" class="logo">
+            <span class="logo-icon">✦</span>
+            HUB<span>3DS-B</span>
+        </a>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#modulos">Módulos</a>
+            <a href="#nosotros">Nosotros</a>
+        </nav>
+
+        <button id="tema" class="theme-btn">☾</button>
     </header>
 
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#modulos">Módulos</a>
-        <a href="#nosotros">Nosotros</a>
-    </nav>
-
     <main>
-        <section id="inicio">
-            <h2>Bienvenidos</h2>
-            <p>Explora nuestros módulos educativos.</p>
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <span class="etiqueta">✦ TU ESPACIO DE APRENDIZAJE</span>
+
+                <h1>
+                    Aprende.<br>
+                    <span>Explora.</span><br>
+                    Evoluciona.
+                </h1>
+
+                <p>
+                    Un espacio para descubrir, organizar y compartir
+                    nuestros conocimientos en Desarrollo de Software.
+                </p>
+
+                <a href="#modulos" class="btn-principal">
+                    Explorar módulos →
+                </a>
+            </div>
+
+            <div class="hero-visual">
+                <div class="orb orb1"></div>
+                <div class="orb orb2"></div>
+
+                <div class="visual-card">
+                    <span class="visual-icon">⌘</span>
+                    <h3>HUB 3DS-B</h3>
+                    <p>Learning Space</p>
+                    <div class="visual-line"></div>
+                    <span class="visual-small">CODE · CREATE · LEARN</span>
+                </div>
+            </div>
         </section>
 
-        <section id="modulos">
-            <h2>Módulos</h2>
+        <section class="stats">
+            <article class="stat-card">
+                <span>▦</span>
+                <div>
+                    <h3 id="total-modulos">00</h3>
+                    <p>Módulos</p>
+                </div>
+            </article>
 
-            <input type="text" id="buscador"
-            placeholder="Buscar módulo...">
+            <article class="stat-card">
+                <span>✧</span>
+                <div>
+                    <h3>∞</h3>
+                    <p>Aprendizaje</p>
+                </div>
+            </article>
 
-            <div id="contenedor-modulos"></div>
+            <article class="stat-card">
+                <span>⌘</span>
+                <div>
+                    <h3>3DS-B</h3>
+                    <p>Desarrollo de Software</p>
+                </div>
+            </article>
         </section>
 
-        <section id="nosotros">
-            <h2>Sobre nosotros</h2>
-            <p>Portal educativo de Desarrollo de Software.</p>
+        <section class="modulos-section" id="modulos">
+            <div class="section-heading">
+                <div>
+                    <span class="etiqueta">NUESTRO CONTENIDO</span>
+                    <h2>Explora tus <span>módulos</span></h2>
+                    <p>Encuentra el espacio de aprendizaje que buscas.</p>
+                </div>
+            </div>
+
+            <div class="search-area">
+                <span>⌕</span>
+                <input
+                    type="text"
+                    id="buscador"
+                    placeholder="Buscar módulos..."
+                >
+            </div>
+
+            <div id="contenedor-modulos" class="modulos-grid">
+            </div>
+        </section>
+
+        <section class="about" id="nosotros">
+            <span class="etiqueta">NUESTRA IDENTIDAD</span>
+            <h2>Un espacio para <span>crecer juntos.</span></h2>
+            <p>
+                Este portal reúne nuestro recorrido académico,
+                nuestros proyectos y nuestros aprendizajes.
+            </p>
         </section>
     </main>
 
     <footer>
-        <p>HUB 3DS-B © 2026</p>
+        <a href="#" class="logo">✦ HUB3DS-B</a>
+        <p>Learning Space · Desarrollo de Software</p>
+        <span>© 2026</span>
     </footer>
 
     <script src="data/modulos.js"></script>
