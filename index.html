@@ -1,130 +1,313 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HUB 3DS-B | Learning Space</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CINE 3DS-B · La película de mi año</title>
+<meta name="description" content="Cartelera interactiva de los 9 módulos del tercer año de Desarrollo de Software 'B'. Proyectos, evidencias, herramientas y trivia. Por Daniela Álvarez.">
+<meta name="theme-color" content="#05050d">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header class="navbar">
-        <a href="#" class="logo">
-            <span class="logo-icon">✦</span>
-            HUB<span>3DS-B</span>
+<a class="skip-link" href="#cartelera">Saltar a la cartelera</a>
+
+<!-- ================= CINTA SUPERIOR ================= -->
+<div class="cinta-top" aria-hidden="true">
+  <div class="cinta-top__track">
+    <span>★ ESTRENO 2026 ★ 9 MÓDULOS ★ 2 DOCENTES ★ 1 AÑO ÉPICO ★ DANIELA ÁLVAREZ ★ 3.° BTV DESARROLLO DE SOFTWARE “B” ★</span>
+    <span>★ ESTRENO 2026 ★ 9 MÓDULOS ★ 2 DOCENTES ★ 1 AÑO ÉPICO ★ DANIELA ÁLVAREZ ★ 3.° BTV DESARROLLO DE SOFTWARE “B” ★</span>
+  </div>
+</div>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="inicio">
+  <a class="nav__logo" href="#inicio" aria-label="CINE 3DS-B, ir al inicio">
+    <span class="nav__logo-reel" aria-hidden="true">🎞</span>
+    <span class="nav__logo-txt">CINE<strong>3DS-B</strong></span>
+  </a>
+
+  <nav class="nav__links" id="navLinks" aria-label="Navegación principal">
+    <a href="#cartelera">Cartelera</a>
+    <a href="#producciones">Producciones</a>
+    <a href="#rodaje">Rodaje</a>
+    <a href="#trivia">Trivia</a>
+    <a href="#butaca">Butaca</a>
+  </nav>
+
+  <div class="nav__actions">
+    <button class="btn-icon" id="btnTema" type="button" aria-label="Cambiar entre modo oscuro y claro" title="Cambiar tema">
+      <span id="temaIcono" aria-hidden="true">☾</span>
+    </button>
+    <button class="btn-icon nav__burger" id="btnMenu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+      <span aria-hidden="true">☰</span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="hero__spot hero__spot--1" aria-hidden="true"></div>
+    <div class="hero__spot hero__spot--2" aria-hidden="true"></div>
+    <div class="hero__grain" aria-hidden="true"></div>
+
+    <div class="hero__wrap">
+      <div class="hero__copy">
+        <p class="hero__kicker"><span class="dot"></span> Una producción de 3.° BTV · INDEL 2026</p>
+
+        <h1 class="hero__title" id="heroTitle">
+          <span class="hero__title-small">Mi año en</span>
+          <span class="hero__title-big">CÓDIGO</span>
+          <span class="hero__title-sub">La película</span>
+        </h1>
+
+        <p class="hero__lead">
+          Nueve módulos, dos docentes y una historia llena de bases de datos,
+          apps, videojuegos y proyectos que salieron del aula. Pasa a la sala:
+          la función está por comenzar.
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#cartelera">🎟 Comprar entrada</a>
+          <a class="btn btn--ghost" href="#producciones">▶ Ver producciones</a>
+        </div>
+
+        <dl class="hero__stats">
+          <div><dt>Módulos</dt><dd data-contador="9">0</dd></div>
+          <div><dt>Docentes</dt><dd data-contador="2">0</dd></div>
+          <div><dt>Proyectos</dt><dd data-contador="8">0</dd></div>
+          <div><dt>Año</dt><dd>2026</dd></div>
+        </dl>
+      </div>
+
+      <!-- Póster principal -->
+      <div class="poster-principal" aria-hidden="true">
+        <div class="poster-principal__marco">
+          <div class="poster-principal__arte">
+            <div class="poster-principal__sol"></div>
+            <div class="poster-principal__lineas"></div>
+            <div class="poster-principal__sello">3DS-B</div>
+            <div class="poster-principal__reel">🎬</div>
+            <p class="poster-principal__frase">“Del aula<br>a la pantalla<br>grande”</p>
+          </div>
+          <div class="poster-principal__pie">
+            <span>DIRIGIDA POR</span>
+            <strong>DANIELA ÁLVAREZ</strong>
+            <span>REPARTO: JAVIER MINEROS · ARCIDES CANALES</span>
+          </div>
+        </div>
+        <div class="poster-principal__entrada">
+          <span class="poster-principal__entrada-top">ADMIT ONE</span>
+          <span class="poster-principal__entrada-num">N.º 6 4 3 9 0 5 0</span>
+          <span class="poster-principal__entrada-bot">SALA 3DS-B · FILA B · BUTACA 9</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="foco" aria-hidden="true"></div>
+  </section>
+
+  <!-- ================= LUCES ================= -->
+  <div class="marquesina" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- ================= CARTELERA ================= -->
+  <section class="seccion cartelera" id="cartelera" aria-labelledby="carteleraTitle">
+    <div class="seccion__head reveal">
+      <p class="etiqueta">HOY EN CARTELERA</p>
+      <h2 class="seccion__titulo" id="carteleraTitle">Nueve funciones, <em>un solo año</em></h2>
+      <p class="seccion__texto">Cada módulo es una película distinta. Toca una butaca para ver la ficha completa: reparto técnico, evidencias y lo que aprendí en el rodaje.</p>
+    </div>
+
+    <div class="cartelera__barra reveal">
+      <div class="buscador">
+        <span aria-hidden="true">🔎</span>
+        <label class="sr-only" for="buscador">Buscar módulo, herramienta o proyecto</label>
+        <input id="buscador" type="search" placeholder="Buscar módulo, herramienta o proyecto…" autocomplete="off">
+        <button type="button" id="limpiarBusqueda" class="buscador__limpiar" aria-label="Limpiar búsqueda" hidden>✕</button>
+      </div>
+
+      <div class="filtros" role="group" aria-label="Filtrar por docente">
+        <button class="chip is-active" data-filtro="todos" type="button">Todas</button>
+        <button class="chip" data-filtro="javier" type="button">Prof. Javier</button>
+        <button class="chip" data-filtro="arcides" type="button">Prof. Arcides</button>
+      </div>
+    </div>
+
+    <div class="progreso reveal" id="progresoBox">
+      <div class="progreso__texto">
+        <span>🎟 Entradas coleccionadas</span>
+        <strong><span id="progresoNum">0</span> / 9</strong>
+      </div>
+      <div class="progreso__barra" role="progressbar" aria-valuemin="0" aria-valuemax="9" aria-valuenow="0" aria-label="Módulos repasados">
+        <span id="progresoFill"></span>
+      </div>
+      <p class="progreso__nota">Marca “Función vista” dentro de cada ficha. Tu progreso se guarda en este navegador.</p>
+    </div>
+
+    <p class="resultado" id="resultado" aria-live="polite"></p>
+
+    <div class="grid-cartelera" id="gridCartelera"></div>
+
+    <p class="vacio" id="vacio" hidden>No hay funciones con ese nombre… pero siempre puedes volver a la cartelera completa.</p>
+  </section>
+
+  <!-- ================= PRODUCCIONES ================= -->
+  <section class="seccion producciones" id="producciones" aria-labelledby="produccionesTitle">
+    <div class="seccion__head reveal">
+      <p class="etiqueta">PRODUCCIONES PROPIAS</p>
+      <h2 class="seccion__titulo" id="produccionesTitle">Mis <em>películas</em> favoritas</h2>
+      <p class="seccion__texto">Ocho proyectos que resumen el año. Algunos se exhibieron en feria, otros viven en GitHub y todos tienen su escena post-créditos.</p>
+    </div>
+
+    <div class="grid-producciones" id="gridProducciones"></div>
+  </section>
+
+  <!-- ================= RODAJE / TIMELINE ================= -->
+  <section class="seccion rodaje" id="rodaje" aria-labelledby="rodajeTitle">
+    <div class="seccion__head reveal">
+      <p class="etiqueta">DETRÁS DE CÁMARA</p>
+      <h2 class="seccion__titulo" id="rodajeTitle">Cómo se filmó <em>este año</em></h2>
+      <p class="seccion__texto">El rodaje no fue en orden. Fue ensayo, error, commit y otra vez. Estas son las cuatro escenas que más me marcaron.</p>
+    </div>
+
+    <ol class="timeline">
+      <li class="reveal">
+        <span class="timeline__num">01</span>
+        <div class="timeline__card">
+          <p class="timeline__tag">Primer acto</p>
+          <h3>Lógica y fundamentos</h3>
+          <p>Variables, condicionales, ciclos, funciones y los primeros scripts en Python. Aquí aprendí que un error no es el final, es una pista.</p>
+          <span class="timeline__tech">Python · PSeInt · VS Code</span>
+        </div>
+      </li>
+      <li class="reveal">
+        <span class="timeline__num">02</span>
+        <div class="timeline__card">
+          <p class="timeline__tag">Segundo acto</p>
+          <h3>Datos y documentación</h3>
+          <p>Modelos entidad-relación, consultas SQL, manuales y ERS. Entendí que un sistema sin documentación es una película sin guion.</p>
+          <span class="timeline__tech">SQL Server · SSMS · Word · draw.io</span>
+        </div>
+      </li>
+      <li class="reveal">
+        <span class="timeline__num">03</span>
+        <div class="timeline__card">
+          <p class="timeline__tag">Tercer acto</p>
+          <h3>Apps, juegos y pantallas</h3>
+          <p>.NET MAUI, XAML, SQLite y videojuegos. La primera vez que una app corrió en el emulador sentí que había dirigido algo de verdad.</p>
+          <span class="timeline__tech">C# · .NET MAUI · XAML · SQLite</span>
+        </div>
+      </li>
+      <li class="reveal">
+        <span class="timeline__num">04</span>
+        <div class="timeline__card">
+          <p class="timeline__tag">Final</p>
+          <h3>Feria y proyecto innovador</h3>
+          <p>SignVoice AI, Etiqueta Clara y Golden Rose: presentar, defender, explicar y escuchar. El año cerró con la idea convertida en producto.</p>
+          <span class="timeline__tech">Git · GitHub · Power BI · IA</span>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ================= TRIVIA ================= -->
+  <section class="seccion trivia" id="trivia" aria-labelledby="triviaTitle">
+    <div class="trivia__marco reveal">
+      <div class="trivia__intro">
+        <p class="etiqueta">ESCENA INTERACTIVA</p>
+        <h2 class="seccion__titulo" id="triviaTitle">Trivia <em>de medianoche</em></h2>
+        <p class="seccion__texto">Cinco preguntas sobre lo que se vio este año. Sin trampa, sin apuntes… aunque nadie te va a revisar la butaca.</p>
+        <div class="trivia__score">
+          <span>Puntaje</span>
+          <strong><span id="quizScore">0</span> / <span id="quizTotal">5</span></strong>
+        </div>
+        <button class="btn btn--ghost btn--small" id="quizReiniciar" type="button">↺ Volver a empezar</button>
+      </div>
+
+      <div class="trivia__juego">
+        <div class="quiz__pregunta" id="quizPregunta" aria-live="polite">
+          <span class="quiz__num" id="quizNum">Pregunta 1</span>
+          <h3 id="quizTexto">Cargando pregunta…</h3>
+        </div>
+        <div class="quiz__opciones" id="quizOpciones"></div>
+        <p class="quiz__feedback" id="quizFeedback" aria-live="assertive"></p>
+        <div class="quiz__pie">
+          <span id="quizProgreso">0 de 5 respondidas</span>
+          <button class="btn btn--primary btn--small" id="quizSiguiente" type="button" disabled>Siguiente →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BUTACA / FOOTER CTA ================= -->
+  <section class="butaca" id="butaca" aria-labelledby="butacaTitle">
+    <div class="butaca__wrap reveal">
+      <p class="etiqueta">FIN DE LA FUNCIÓN</p>
+      <h2 id="butacaTitle">Gracias por acompañarme<br>en esta <em>función</em>.</h2>
+      <p>Daniela Álvarez · 3.° BTV Desarrollo de Software “B” · INDEL 2026</p>
+
+      <div class="butaca__datos">
+        <a href="mailto:6439050@clases.edu.sv" class="butaca__dato">
+          <span aria-hidden="true">✉</span>
+          <span><small>Correo</small>6439050@clases.edu.sv</span>
         </a>
+        <a href="https://github.com/DANIELAALVAREZ502/HUB3DSB" class="butaca__dato" target="_blank" rel="noopener">
+          <span aria-hidden="true">🐙</span>
+          <span><small>Repositorio</small>DANIELAALVAREZ502 / HUB3DSB</span>
+        </a>
+        <span class="butaca__dato">
+          <span aria-hidden="true">🎓</span>
+          <span><small>Docentes</small>Javier Mineros · Arcides Canales</span>
+        </span>
+      </div>
+    </div>
+  </section>
 
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#modulos">Módulos</a>
-            <a href="#nosotros">Nosotros</a>
-        </nav>
+</main>
 
-        <button id="tema" class="theme-btn">☾</button>
-    </header>
+<footer class="footer">
+  <p>© 2026 · CINE 3DS-B · Hecho con HTML, CSS y JavaScript a mano, sin frameworks.</p>
+  <p class="footer__mini">Créditos a Prof. Javier Mineros y Prof. Arcides Canales por el guion de este año.</p>
+  <a href="#inicio" class="footer__up">↑ Volver al inicio</a>
+</footer>
 
-    <main>
-        <section class="hero" id="inicio">
-            <div class="hero-content">
-                <span class="etiqueta">✦ TU ESPACIO DE APRENDIZAJE</span>
+<!-- ================= DIÁLOGO: FICHA DE MÓDULO ================= -->
+<dialog class="dialog dialog--ficha" id="dlgModulo" aria-labelledby="fichaTitulo">
+  <div class="dialog__inner">
+    <button class="dialog__cerrar" type="button" data-cerrar="dlgModulo" aria-label="Cerrar ficha">✕</button>
+    <div id="fichaContenido"></div>
+  </div>
+</dialog>
 
-                <h1>
-                    Aprende.<br>
-                    <span>Explora.</span><br>
-                    Evoluciona.
-                </h1>
+<!-- ================= DIÁLOGO: PROYECTO ================= -->
+<dialog class="dialog dialog--proyecto" id="dlgProyecto" aria-labelledby="proyectoTitulo">
+  <div class="dialog__inner dialog__inner--proyecto">
+    <button class="dialog__cerrar" type="button" data-cerrar="dlgProyecto" aria-label="Cerrar proyecto">✕</button>
+    <div id="proyectoContenido"></div>
+  </div>
+</dialog>
 
-                <p>
-                    Un espacio para descubrir, organizar y compartir
-                    nuestros conocimientos en Desarrollo de Software.
-                </p>
+<!-- ================= LIGHTBOX ================= -->
+<dialog class="lightbox" id="lightbox" aria-label="Vista ampliada de la imagen">
+  <button class="lightbox__cerrar" type="button" data-cerrar="lightbox" aria-label="Cerrar imagen">✕</button>
+  <figure class="lightbox__figura">
+    <img id="lightboxImg" src="" alt="">
+    <figcaption id="lightboxCap"></figcaption>
+  </figure>
+</dialog>
 
-                <a href="#modulos" class="btn-principal">
-                    Explorar módulos →
-                </a>
-            </div>
-
-            <div class="hero-visual">
-                <div class="orb orb1"></div>
-                <div class="orb orb2"></div>
-
-                <div class="visual-card">
-                    <span class="visual-icon">⌘</span>
-                    <h3>HUB 3DS-B</h3>
-                    <p>Learning Space</p>
-                    <div class="visual-line"></div>
-                    <span class="visual-small">CODE · CREATE · LEARN</span>
-                </div>
-            </div>
-        </section>
-
-        <section class="stats">
-            <article class="stat-card">
-                <span>▦</span>
-                <div>
-                    <h3 id="total-modulos">00</h3>
-                    <p>Módulos</p>
-                </div>
-            </article>
-
-            <article class="stat-card">
-                <span>✧</span>
-                <div>
-                    <h3>∞</h3>
-                    <p>Aprendizaje</p>
-                </div>
-            </article>
-
-            <article class="stat-card">
-                <span>⌘</span>
-                <div>
-                    <h3>3DS-B</h3>
-                    <p>Desarrollo de Software</p>
-                </div>
-            </article>
-        </section>
-
-        <section class="modulos-section" id="modulos">
-            <div class="section-heading">
-                <div>
-                    <span class="etiqueta">NUESTRO CONTENIDO</span>
-                    <h2>Explora tus <span>módulos</span></h2>
-                    <p>Encuentra el espacio de aprendizaje que buscas.</p>
-                </div>
-            </div>
-
-            <div class="search-area">
-                <span>⌕</span>
-                <input
-                    type="text"
-                    id="buscador"
-                    placeholder="Buscar módulos..."
-                >
-            </div>
-
-            <div id="contenedor-modulos" class="modulos-grid">
-            </div>
-        </section>
-
-        <section class="about" id="nosotros">
-            <span class="etiqueta">NUESTRA IDENTIDAD</span>
-            <h2>Un espacio para <span>crecer juntos.</span></h2>
-            <p>
-                Este portal reúne nuestro recorrido académico,
-                nuestros proyectos y nuestros aprendizajes.
-            </p>
-        </section>
-    </main>
-
-    <footer>
-        <a href="#" class="logo">✦ HUB3DS-B</a>
-        <p>Learning Space · Desarrollo de Software</p>
-        <span>© 2026</span>
-    </footer>
-
-    <script src="data/modulos.js"></script>
-    <script src="js/main.js"></script>
-
+<script src="data/modulos.js"></script>
+<script src="data/proyectos.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
