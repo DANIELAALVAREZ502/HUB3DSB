@@ -393,7 +393,7 @@ em { font-style: normal; }
   border: 1px dashed rgba(59, 38, 6, .4);
 }
 .poster-principal__entrada-top { font-size: 9px; letter-spacing: .26em; font-weight: 700; }
-.poster-principal__entrada-num { font-size: 16px; font-weight: 700; letter-spacing: .1em; }
+.poster-principal__entrada-num { font-size: 14px; font-weight: 700; letter-spacing: .05em; white-space: nowrap; }
 .poster-principal__entrada-bot { font-size: 8px; letter-spacing: .12em; border-top: 1px dashed rgba(59, 38, 6, .4); padding-top: 4px; }
 
 .foco {
