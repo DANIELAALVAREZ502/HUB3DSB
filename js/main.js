@@ -24,6 +24,8 @@
     m4: "🌹", m3en: "🎤", m2: "📱", m31: "🎮"
   };
 
+  const etiquetaModulo = (m) => (m.id === "m31" ? "BTVD 3.1" : `Módulo ${m.codigo}`);
+
   const IMAGENES = {
     goldenrose: { src: "img/goldenrose.jpg", alt: "Tienda online Golden Rose en PrestaShop" },
     powerbi:    { src: "img/powerbi.jpg",    alt: "Dashboard de Power BI con gráficos de medallistas" },
@@ -103,8 +105,8 @@
     const tags = (m.herramientas || []).slice(0, 3);
 
     return `
-      <article class="peli${visto ? " is-visto" : ""}" data-id="${m.id}" style="animation-delay:${Math.min(i * 55, 420)}ms">
-        <div class="peli__arte" style="--c1:${m.c1};--c2:${m.c2}" aria-hidden="true">
+      <article class="peli${visto ? " is-visto" : ""}" data-id="${m.id}" style="--c1:${m.c1};--c2:${m.c2};animation-delay:${Math.min(i * 55, 420)}ms">
+        <div class="peli__arte" aria-hidden="true">
           <div class="peli__perf peli__perf--top"></div>
           <div class="peli__perf peli__perf--bot"></div>
           <span class="peli__num">${m.codigo}</span>
@@ -115,9 +117,9 @@
         </div>
 
         <div class="peli__cuerpo">
-          <p class="peli__codigo">MÓDULO ${m.codigo} · ${m.docente.toUpperCase()}</p>
-          <h3 class="peli__nombre">${m.corto}</h3>
-          <p class="peli__oficial">${m.nombre}</p>
+          <p class="peli__codigo">${etiquetaModulo(m)}</p>
+          <h3 class="peli__nombre">“${m.nombre}”</h3>
+          <p class="peli__docente">Prof. ${m.docente}</p>
           <p class="peli__tagline">“${m.tagline}”</p>
           <div class="peli__tags">
             ${tags.map((t) => `<span>${t}</span>`).join("")}
@@ -164,7 +166,7 @@
 
     fichaContenido.innerHTML = `
       <div class="ficha__hero" style="--c1:${m.c1};--c2:${m.c2}">
-        <p class="ficha__funcion">Módulo ${m.codigo} · ${m.docente} · ${m.genero}</p>
+        <p class="ficha__funcion">${etiquetaModulo(m)} · ${m.docente} · ${m.genero}</p>
         <h2 class="ficha__nombre" id="fichaTitulo">${m.nombre}</h2>
         <p class="ficha__tagline">“${m.tagline}”</p>
         <div class="ficha__meta">

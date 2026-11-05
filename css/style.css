@@ -606,13 +606,9 @@ em { font-style: normal; }
   text-transform: uppercase; color: var(--azul); margin-bottom: 6px;
 }
 .peli__nombre {
-  font-family: var(--fd); font-weight: 400; font-size: 27px;
-  line-height: 1.02; letter-spacing: .02em; margin-bottom: 6px;
-}
-.peli__oficial {
-  font-size: 12.5px; line-height: 1.4; color: var(--mut);
-  margin-bottom: 8px;
-  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3;
+  font-family: var(--fb); font-weight: 700; font-size: 16px;
+  line-height: 1.32; letter-spacing: 0; margin-bottom: 8px;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5;
   overflow: hidden;
 }
 .peli__tagline {
