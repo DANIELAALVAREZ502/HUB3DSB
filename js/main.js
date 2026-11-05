@@ -91,8 +91,8 @@
 
     const total = MODULOS.length;
     resultado.textContent = lista.length === total
-      ? `Cartelera completa · ${total} funciones`
-      : `${lista.length} de ${total} funciones en pantalla`;
+      ? `Cartelera completa · ${total} módulos`
+      : `${lista.length} de ${total} módulos en pantalla`;
 
     const btnLimpiar = $("#limpiarBusqueda");
     if (btnLimpiar) btnLimpiar.hidden = !busqueda;
@@ -107,21 +107,22 @@
         <div class="peli__arte" style="--c1:${m.c1};--c2:${m.c2}" aria-hidden="true">
           <div class="peli__perf peli__perf--top"></div>
           <div class="peli__perf peli__perf--bot"></div>
-          <span class="peli__num">${m.funcion}</span>
+          <span class="peli__num">${m.codigo}</span>
           <span class="peli__genero">${m.genero}</span>
           <span class="peli__icono">${ICONOS[m.id] || "🎬"}</span>
-          <span class="peli__franja">Módulo ${m.codigo} · ${m.docente}</span>
-          <span class="peli__visto">✓ Vista</span>
+          <span class="peli__franja">CINE 3DS-B · ESTRENO 2026</span>
+          <span class="peli__visto">✓ Visto</span>
         </div>
 
         <div class="peli__cuerpo">
-          <p class="peli__codigo">Función ${m.funcion} · ${m.codigo}</p>
+          <p class="peli__codigo">MÓDULO ${m.codigo} · ${m.docente.toUpperCase()}</p>
           <h3 class="peli__nombre">${m.corto}</h3>
+          <p class="peli__oficial">${m.nombre}</p>
           <p class="peli__tagline">“${m.tagline}”</p>
-          <p class="peli__docente">${m.docente}</p>
           <div class="peli__tags">
             ${tags.map((t) => `<span>${t}</span>`).join("")}
           </div>
+          <p class="peli__cuenta">${m.proyectos.length} ${m.proyectos.length === 1 ? "proyecto" : "proyectos"} · ${m.programas.length} programas</p>
           <div class="peli__pie">
             <button class="peli__abrir" type="button" data-modulo="${m.id}">
               Ver ficha <span aria-hidden="true">→</span>
@@ -163,7 +164,7 @@
 
     fichaContenido.innerHTML = `
       <div class="ficha__hero" style="--c1:${m.c1};--c2:${m.c2}">
-        <p class="ficha__funcion">Función ${m.funcion} · Módulo ${m.codigo} · ${m.genero}</p>
+        <p class="ficha__funcion">Módulo ${m.codigo} · ${m.docente} · ${m.genero}</p>
         <h2 class="ficha__nombre" id="fichaTitulo">${m.nombre}</h2>
         <p class="ficha__tagline">“${m.tagline}”</p>
         <div class="ficha__meta">
@@ -175,6 +176,13 @@
 
       <div class="ficha__cuerpo">
         <p class="ficha__resumen">${m.resumen}</p>
+
+        <div class="ficha__stats">
+          <div><small>Módulo</small><strong>${m.codigo}</strong></div>
+          <div><small>Docente</small><strong>${m.docente}</strong></div>
+          <div><small>Proyectos</small><strong>${m.proyectos.length}</strong></div>
+          <div><small>Programas</small><strong>${m.programas.length}</strong></div>
+        </div>
 
         <section class="ficha__bloque">
           <h4>Lo que aprendí</h4>
@@ -234,7 +242,7 @@
 
         <div class="ficha__acciones">
           <button class="ficha__visto${visto ? " is-on" : ""}" type="button" data-visto="${m.id}" aria-pressed="${visto}">
-            <span aria-hidden="true">🎟</span> <span data-texto-visto>${visto ? "Función vista" : "Marcar como vista"}</span>
+            <span aria-hidden="true">🎟</span> <span data-texto-visto>${visto ? "Módulo visto" : "Marcar como visto"}</span>
           </button>
           <span class="ficha__nota">Se guarda en este navegador.</span>
         </div>
@@ -621,7 +629,7 @@
       btn.classList.toggle("is-on", activo);
       btn.setAttribute("aria-pressed", String(activo));
       const texto = btn.querySelector("[data-texto-visto]");
-      if (texto) texto.textContent = activo ? "Función vista" : "Marcar como vista";
+      if (texto) texto.textContent = activo ? "Módulo visto" : "Marcar como visto";
     });
 
     // Botones de cierre

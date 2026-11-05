@@ -13,7 +13,7 @@ Desarrollo de Software “B”, presentado como una cartelera de cine.
 
 ## ✨ Qué incluye
 
-- **Cartelera de 9 funciones**: los 5 módulos del Prof. Javier Mineros y los 4 del
+- **Cartelera de 9 módulos**: los 5 módulos del Prof. Javier Mineros y los 4 del
   Prof. Arcides Canales, con género cinematográfico, tagline y póster generado con CSS.
 - **Ficha completa por módulo**: resumen, lo aprendido, programas, herramientas,
   proyectos, recursos, evidencia real y dato clave.

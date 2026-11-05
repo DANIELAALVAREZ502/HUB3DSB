@@ -602,15 +602,21 @@ em { font-style: normal; }
 
 .peli__cuerpo { padding: 18px 18px 20px; display: flex; flex-direction: column; flex: 1; }
 .peli__codigo {
-  font-family: var(--fm); font-size: 10px; letter-spacing: .2em;
+  font-family: var(--fm); font-size: 10px; font-weight: 700; letter-spacing: .1em;
   text-transform: uppercase; color: var(--azul); margin-bottom: 6px;
 }
 .peli__nombre {
   font-family: var(--fd); font-weight: 400; font-size: 27px;
   line-height: 1.02; letter-spacing: .02em; margin-bottom: 6px;
 }
+.peli__oficial {
+  font-size: 12.5px; line-height: 1.4; color: var(--mut);
+  margin-bottom: 8px;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3;
+  overflow: hidden;
+}
 .peli__tagline {
-  font-size: 13.5px; font-style: italic; color: var(--mut);
+  font-size: 13px; font-style: italic; color: var(--mut);
   margin-bottom: 12px;
 }
 .peli__docente {
@@ -621,13 +627,18 @@ em { font-style: normal; }
   content: ""; width: 6px; height: 6px; border-radius: 50%;
   background: var(--c1); box-shadow: 0 0 8px var(--c1);
 }
-.peli__tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 18px; }
+.peli__tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
 .peli__tags span {
   font-size: 10.5px; font-family: var(--fm); letter-spacing: .03em;
   padding: 4px 8px; border-radius: 5px;
   background: color-mix(in srgb, var(--txt) 6%, transparent);
   border: 1px solid var(--line);
   color: var(--mut);
+}
+.peli__cuenta {
+  margin-top: auto; margin-bottom: 10px;
+  font-family: var(--fm); font-size: 9.5px;
+  letter-spacing: .05em; color: var(--mut); opacity: .85;
 }
 .peli__pie { margin-top: auto; display: flex; align-items: center; gap: 8px; }
 .peli__abrir {
@@ -1005,6 +1016,21 @@ a.butaca__dato:hover { border-color: var(--azul); transform: translateY(-3px); }
 
 .ficha__cuerpo { padding: 26px 30px 34px; display: grid; gap: 24px; }
 .ficha__resumen { font-size: 16px; color: var(--txt); }
+
+.ficha__stats {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px;
+}
+.ficha__stats div {
+  padding: 10px 12px; border-radius: 9px;
+  background: color-mix(in srgb, var(--panel-2) 72%, transparent);
+  border: 1px solid var(--line);
+}
+.ficha__stats small {
+  display: block; font-family: var(--fm); font-size: 8.5px;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--mut);
+  margin-bottom: 3px;
+}
+.ficha__stats strong { font-size: 13px; line-height: 1.3; }
 .ficha__bloque h4 {
   font-family: var(--fm); font-size: 10.5px; letter-spacing: .22em;
   text-transform: uppercase; color: var(--azul);
@@ -1207,11 +1233,13 @@ a.butaca__dato:hover { border-color: var(--azul); transform: translateY(-3px); }
   .grid-cartelera { grid-template-columns: 1fr; }
   .grid-producciones { grid-template-columns: 1fr; }
   .cartelera__barra { flex-direction: column; align-items: stretch; }
+  .buscador { flex: 0 0 auto; }
   .filtros { justify-content: flex-start; }
   .timeline li { grid-template-columns: 38px minmax(0, 1fr); gap: 14px; }
   .timeline::before { left: 18px; }
   .timeline__num { width: 38px; height: 38px; font-size: 11px; }
   .ficha__hero, .ficha__cuerpo, .proyecto__cuerpo { padding-left: 20px; padding-right: 20px; }
+  .ficha__stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ficha__nota { margin-left: 0; flex-basis: 100%; }
   .butaca__datos { grid-template-columns: 1fr; }
   .quiz__pie { flex-direction: column; align-items: stretch; }
