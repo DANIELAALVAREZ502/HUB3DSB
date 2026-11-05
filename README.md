@@ -24,7 +24,7 @@ Desarrollo de Software “B”, presentado como una cartelera de cine.
   Conejitos Mágicos, Dashboard Power BI, Laboratorio Arduino, CRUD .NET MAUI y
   Laboratorio Python.
 - **Capturas reales** de los proyectos, con visor ampliado (lightbox).
-- **Línea de tiempo del rodaje** y **trivia de 5 preguntas** con puntaje.
+- **Línea de tiempo del rodaje** y **trivia aleatoria de 5 preguntas** elegidas de un banco de 38, con puntaje.
 - **Modo oscuro / claro**, menú móvil y animaciones con `IntersectionObserver`.
 - Diseño responsive, sin frameworks y sin dependencias de JavaScript.
 

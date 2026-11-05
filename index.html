@@ -226,7 +226,7 @@
       <div class="trivia__intro">
         <p class="etiqueta">ESCENA INTERACTIVA</p>
         <h2 class="seccion__titulo" id="triviaTitle">Trivia <em>de medianoche</em></h2>
-        <p class="seccion__texto">Cinco preguntas sobre lo que se vio este año. Sin trampa, sin apuntes… aunque nadie te va a revisar la butaca.</p>
+        <p class="seccion__texto">Cinco preguntas al azar de un banco de 38, sacadas de los nueve módulos. Cada visita cambia la función… aunque nadie te va a revisar la butaca.</p>
         <div class="trivia__score">
           <span>Puntaje</span>
           <strong><span id="quizScore">0</span> / <span id="quizTotal">5</span></strong>
@@ -236,7 +236,10 @@
 
       <div class="trivia__juego">
         <div class="quiz__pregunta" id="quizPregunta" aria-live="polite">
-          <span class="quiz__num" id="quizNum">Pregunta 1</span>
+          <div class="quiz__top">
+            <span class="quiz__num" id="quizNum">Pregunta 1</span>
+            <span class="quiz__modulo" id="quizModulo">Módulo 3.0</span>
+          </div>
           <h3 id="quizTexto">Cargando pregunta…</h3>
         </div>
         <div class="quiz__opciones" id="quizOpciones"></div>
